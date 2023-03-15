@@ -33,6 +33,7 @@ const fp = flatpickr('#datetime-picker', {
   },
 });
 //=========================================================================================================================================
+const targetTime = 0;
 function timerStart() {
     refs.button.disabled = true;
     refs.input.disabled = true;

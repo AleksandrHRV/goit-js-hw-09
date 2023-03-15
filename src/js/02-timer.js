@@ -13,25 +13,6 @@ const refs = {
 refs.button.disabled = true;
 refs.button.addEventListener('click', timerStart);
 //=========================================================================================================================================
-function timerStart() {
-    refs.button.disabled = true;
-    refs.input.disabled = true;
-  const timerId = setInterval(() => {
-    const currentTime = Date.now();
-    const timeDifference = convertMs(targetTime - currentTime);
-    const { days, hours, minutes, seconds } = timeDifference;
-    if (days === '00' && hours === '00' && minutes === '00' && seconds === '00'){
-      clearInterval(timerId);
-      refs.button.disabled = false;
-      refs.input.disabled = false;
-    }
-    refs.days.textContent = `${days}`
-    refs.hours.textContent = `${hours}`
-    refs.minutes.textContent = `${minutes}`
-    refs.seconds.textContent = `${seconds}`
-  }, 1000);
-}
-//=========================================================================================================================================
 let datePicker = '';
 const fp = flatpickr('#datetime-picker', {
   enableTime: false,
@@ -51,6 +32,25 @@ const fp = flatpickr('#datetime-picker', {
     } 
   },
 });
+//=========================================================================================================================================
+function timerStart() {
+    refs.button.disabled = true;
+    refs.input.disabled = true;
+  const timerId = setInterval(() => {
+    const currentTime = Date.now();
+    const timeDifference = convertMs(targetTime - currentTime);
+    const { days, hours, minutes, seconds } = timeDifference;
+    if (days === '00' && hours === '00' && minutes === '00' && seconds === '00'){
+      clearInterval(timerId);
+      refs.button.disabled = false;
+      refs.input.disabled = false;
+    }
+    refs.days.textContent = `${days}`
+    refs.hours.textContent = `${hours}`
+    refs.minutes.textContent = `${minutes}`
+    refs.seconds.textContent = `${seconds}`
+  }, 1000);
+}
 //=========================================================================================================================================
 function convertMs(ms) {
   // Number of milliseconds per unit of time

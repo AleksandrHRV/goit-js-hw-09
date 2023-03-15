@@ -12,7 +12,7 @@ const refs = {
 };
 refs.button.disabled = true;
 refs.button.addEventListener('click', timerStart);
-let targetTime = 0;
+let targetTime = null;
 //=========================================================================================================================================
 let datePicker = '';
 const fp = flatpickr('#datetime-picker', {

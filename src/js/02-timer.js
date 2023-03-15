@@ -28,7 +28,7 @@ const fp = flatpickr('#datetime-picker', {
         Notify.failure('Please choose a date in the future');
     } else if(new Date() < fp.selectedDates[0]){
         Notify.success('Congratulations, the countdown is on!');
-        targetTime = selectedDates[0];
+        targetTime = fp.selectedDates[0];
         refs.button.disabled = false;
     } 
   },

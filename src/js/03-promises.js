@@ -2,7 +2,6 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const refs = { 
   form: document.querySelector(".form")
 }
-console.dir(refs.form);
 refs.form.addEventListener('submit', e => {
   e.preventDefault()
   const { delay, step, amount } = e.currentTarget;
